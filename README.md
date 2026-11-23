@@ -94,13 +94,13 @@
 
 | Evaluation Dimension | Primary Metric | Measured NOSIH Result | Comparison / Statistical Rigor |
 | :--- | :--- | :---: | :--- |
-| **Active Energy** | 240-Prompt Diurnal Total | **-75.2%** (`0.005567` vs. `0.022479 kWh`) | $p = 1.26 \times 10^{-38}$, $r_{\text{rb}} = 0.9678$; -18.5% vs. Fixed-Threshold ($p = 1.15 \times 10^{-13}$) |
-| **Operational Carbon** | 240-Prompt Diurnal CO₂ | **-68.7%** (`2.1728` vs. `6.9487 g`) | $p = 1.43 \times 10^{-37}$, $r_{\text{rb}} = 0.9539$; -18.2% vs. Fixed-Threshold ($p = 2.36 \times 10^{-12}$) |
-| **Latency & Cost** | Mean Latency / Total Cost | **-67.8%** (`707.6 ms`) / **-63.1%** (`$0.024826`) | $p = 2.69 \times 10^{-37}$ / $p = 7.86 \times 10^{-39}$; 3-seed SD ≤ 0.74% |
+| **Active Energy** | 240-Prompt Diurnal Total | **-75.2%** (`0.005567` vs. `0.022479 kWh`) | $`p = 1.26 \times 10^{-38}`$, $`r_{\text{rb}} = 0.9678`$; -18.5% vs. Fixed-Threshold ($`p = 1.15 \times 10^{-13}`$) |
+| **Operational Carbon** | 240-Prompt Diurnal CO₂ | **-68.7%** (`2.1728` vs. `6.9487 g`) | $`p = 1.43 \times 10^{-37}`$, $`r_{\text{rb}} = 0.9539`$; -18.2% vs. Fixed-Threshold ($`p = 2.36 \times 10^{-12}`$) |
+| **Latency & Cost** | Mean Latency / Total Cost | **-67.8%** (`707.6 ms`) / **-63.1%** (`$0.024826`) | $`p = 2.69 \times 10^{-37}`$ / $`p = 7.86 \times 10^{-39}`$; 3-seed SD ≤ 0.74% |
 | **Goal-Normalized Efficiency** | Task Success & Energy/Goal | **97.50%** (`0.02379 Wh/goal`, **-75.3%**) | Exceeds Static Large (`97.08%`) and Fixed-Threshold Router (`90.83%`) |
 | **Idle GPU Power** | PCS-PMC 3-State Sleep | **-79.35%** (`33.6677 Wh` net saved) | `68` vs. `94` wakeups (-27.7% thrashing); `257.8 ms` average wake latency |
 | **Zero-Trust Security** | 100-Case 10-Family Suite | **70/70 Blocked (`0.0%` FNR) · 30/30 Benign (`0.0%` FPR)** | 95% Wilson CI `[94.80%, 100.0%]`; `2.714 ms` mean / `3.593 ms` P95 proxy overhead |
-| **Distribution Shift Risk** | 5-Seed Online Conformal PID | **5.30% ± 0.12%** post-shift error | `74.12% ± 1.17%` coverage vs. `28.88% ± 1.41%` static error ($p = 9.90 \times 10^{-40}$) |
+| **Distribution Shift Risk** | 5-Seed Online Conformal PID | **5.30% ± 0.12%** post-shift error | `74.12% ± 1.17%` coverage vs. `28.88% ± 1.41%` static error ($`p = 9.90 \times 10^{-40}`$) |
 | **Cross-Plane Defenses** | PCSP · PA-PCS-PMC · CCEC | **-96.9% C-DoW CO₂ · -100.0% Sleep-DoS · 240/240 CCEC** | `50/50` C-DoW mitigated · `0.0 J` vs. `7000.0 J` wasted · `20/20` tamper & `20/20` spoof caught |
 
 ---
@@ -140,13 +140,13 @@ Bolting independent point solutions together—such as placing a security proxy 
 
 * **C1 — Unified Tri-Plane Kernel:** Single closed-loop orchestration runtime coupling Zero-Trust Security (**Plane I**), Carbon-Conformal Control (**Plane II**), and Durable Neuro-Symbolic Execution & Power Control (**Plane III**).
 * **C2 — Anti-Spoofing 10D Profiler & Provenance-Scoped Semantic Cache (`PS-RCSC`):** Sub-millisecond CPU feature extractor paired with a provenance-partitioned float32 BLAS semantic cache featuring cost-aware deterministic bypass (`0.018 ms`), polarity/numeric guards, and Channel-2 Conformal admission.
-* **C3 — Carbon-Aware Primal-Dual Routing (`CA-DPD-LinUCB`) & Dual-Channel Conformal PID:** Discounted linear contextual bandit with online Lagrangian dual multipliers over diurnal grid carbon $C(t)$, energy, and latency budgets, stabilized by distribution-free Online Conformal PID ($\alpha = 0.05$).
+* **C3 — Carbon-Aware Primal-Dual Routing (`CA-DPD-LinUCB`) & Dual-Channel Conformal PID:** Discounted linear contextual bandit with online Lagrangian dual multipliers over diurnal grid carbon $C(t)$, energy, and latency budgets, stabilized by distribution-free Online Conformal PID ($`\alpha = 0.05`$).
 * **C4 — Non-Bypassable Zero-Trust Reference Monitor (`CAT-PLM`):** Strict RFC 8785 JCS canonicalization, out-of-band HMAC-SHA256 signed boot manifests, offline-attenuable `SPCCE-Macaroon` capabilities with SQLite WAL single-use `jti` replay locks, `POST-W++` Integrity × Confidentiality provenance semiring with exact-`Decimal` linear budgets, and an RFC 6962/9162 binary Merkle Transparency Log (`MTLog`).
 * **C5 — Predictive Multi-State Power Control (`PCS-PMC`) & Reproducible Verification:** Break-even EWMA-hysteresis three-state GPU sleep controller verified across a 240-prompt 3-seed diurnal benchmark, 7-condition ablation, 100-case 10-family security suite, 5-seed shift study, and `46/46` automated tests.
 * **C6 — Three Irreducible Cross-Plane Primitives:**
   1. **PCSP (Provenance-Coupled Carbon-Security Pricing):** Cuts C-DoW adversarial emissions by **96.9%** (`50/50` mitigated).
   2. **PA-PCS-PMC (Pre-Authorized, Carbon-Modulated Sleep Control):** Cuts Sleep-Thrashing DoS wakeup waste by **100.0%** (`0.0 J` vs. `7000.0 J`, `n=40`).
-  3. **CCEC (Cryptographic Carbon-Attested Execution Certificates):** Commits Scope-2 footprints into `MTLog` with $O(\log N)$ Merkle auditability (`240/240` verified in `7.93` mean / `8` max hashes (`7–8` range), `20/20` tamper detection, `20/20` simulated-as-hardware spoof rejection).
+  3. **CCEC (Cryptographic Carbon-Attested Execution Certificates):** Commits Scope-2 footprints into `MTLog` with $`O(\log N)`$ Merkle auditability (`240/240` verified in `7.93` mean / `8` max hashes (`7–8` range), `20/20` tamper detection, `20/20` simulated-as-hardware spoof rejection).
 
 ---
 
@@ -161,7 +161,7 @@ Prior literature advances individual axes—offline model compression (Green AI)
 | 3. Predictive Multi-State Sleep (EWMA Hysteresis) | 🟡 Partial | ❌ | 🟡 Partial | ❌ | ❌ | ✅ **Full** |
 | 4. Tool-Boundary IPI Isolation / IFC Lattice | ❌ | ❌ | ❌ | ❌ | ✅ Full | ✅ **Full** |
 | 5. Cryptographic Capabilities & Merkle Audit | ❌ | ❌ | ❌ | ❌ | 🟡 Partial | ✅ **Full** |
-| 6. Online Conformal Risk Control ($\alpha = 0.05$) | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ **Full** |
+| 6. Online Conformal Risk Control ($`\alpha = 0.05`$) | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ **Full** |
 | 7. Provenance-Scoped Semantic Caching (`PS-RCSC`) | ❌ | ❌ | 🟡 Partial | 🟡 Partial | ❌ | ✅ **Full** |
 | 8. C-DoW Carbon-Security Pricing (`PCSP`) | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ **Full** |
 | 9. Cryptographic Carbon Certificates (`CCEC`) | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ **Full** |
@@ -193,18 +193,18 @@ Before benchmarking, we derived five formal theorems establishing cryptographic 
 <details>
 <summary><strong>Click to expand Formal Theorems 1–5 & Proof Sketches</strong></summary>
 
-* **Theorem 1 (Non-Escalation & Monotonic Attenuation):** Under EUF-CMA security of HMAC-SHA256 ($\lambda = 256$ bits), given a valid Macaroon $C_k = (\text{header}, [c_1, \dots, c_k], \sigma_k)$, no PPT adversary without $K_{s,u}$ can forge an accepted $C'$ authorizing $r \notin \bigcap_{i=1}^k \mathcal{A}(c_i)$ with probability exceeding $\text{Adv}^{\text{EUF-CMA}}_{\text{HMAC}}(\lambda) + 2^{-\lambda}$.  
-  *Proof Sketch:* Dropping or modifying any caveat $c_j$ ($j \le k$) or `header` requires forging an HMAC under unknown intermediate key $\sigma_{j-1}$ or colliding SHA-256; appending caveats only shrinks $\bigcap \mathcal{A}(c_i)$. $\square$
+* **Theorem 1 (Non-Escalation & Monotonic Attenuation):** Under EUF-CMA security of HMAC-SHA256 ($`\lambda = 256`$ bits), given a valid Macaroon $`C_k = (\text{header}, [c_1, \dots, c_k], \sigma_k)`$, no PPT adversary without $`K_{s,u}`$ can forge an accepted $C'$ authorizing $`r \notin \bigcap_{i=1}^k \mathcal{A}(c_i)`$ with probability exceeding $`\text{Adv}^{\text{EUF-CMA}}_{\text{HMAC}}(\lambda) + 2^{-\lambda}`$.  
+  *Proof Sketch:* Dropping or modifying any caveat $`c_j`$ ($`j \le k`$) or `header` requires forging an HMAC under unknown intermediate key $`\sigma_{j-1}`$ or colliding SHA-256; appending caveats only shrinks $`\bigcap \mathcal{A}(c_i)`$. $`\square`$
 
-* **Theorem 2 (Concurrent Replay & Linear Budget Soundness):** Under SQLite WAL `BEGIN IMMEDIATE` serialization and 128-bit CSPRNG JTIs, across any $T$ concurrent threads: (a) at most one call per unique `jti` executes; and (b) for any witness $w$ with exact-`Decimal` budget $B_w$, total payouts satisfy $\sum_j a_j \le B_w$.  
-  *Proof Sketch:* `BEGIN IMMEDIATE` acquires a `RESERVED` write lock prior to reads, serializing `PRIMARY KEY (jti)` inserts and inductive exact-`Decimal` updates $0 \le \text{rem}_t = B_w - \sum_{j \le t} a_j$. $\square$
+* **Theorem 2 (Concurrent Replay & Linear Budget Soundness):** Under SQLite WAL `BEGIN IMMEDIATE` serialization and 128-bit CSPRNG JTIs, across any $T$ concurrent threads: (a) at most one call per unique `jti` executes; and (b) for any witness $w$ with exact-`Decimal` budget $`B_w`$, total payouts satisfy $`\sum_j a_j \le B_w`$.  
+  *Proof Sketch:* `BEGIN IMMEDIATE` acquires a `RESERVED` write lock prior to reads, serializing `PRIMARY KEY (jti)` inserts and inductive exact-`Decimal` updates $`0 \le \text{rem}_t = B_w - \sum_{j \le t} a_j`$. $`\square`$
 
-* **Theorem 3 (Multi-Hop IFC Soundness & Tamper Evidence):** Over any acyclic DAG $G = (V, E)$, any `UNTRUSTED` ancestor forces $\ell_{\mathcal{I}}(u) = \text{UNTRUSTED}$ (blocking trusted sinks), and any ancestor with $\ell_{\mathcal{C}}(v) \not\sqsubseteq_{\mathcal{C}} \text{clear}(e)$ blocks egress $e$. Under SHA-256 collision resistance and `0x00`/`0x01` domain separation, modifying or truncating any leaf $i < m$ fails `MTLog` verification against witnessed $\text{STH}_m$ in $O(\log N)$ time.  
-  *Proof Sketch:* Immediate by topological induction via absorptivity of $\sqcup_{\mathcal{I}}, \sqcup_{\mathcal{C}}$ and collision reduction at the lowest differing Merkle node. $\square$
+* **Theorem 3 (Multi-Hop IFC Soundness & Tamper Evidence):** Over any acyclic DAG $G = (V, E)$, any `UNTRUSTED` ancestor forces $`\ell_{\mathcal{I}}(u) = \text{UNTRUSTED}`$ (blocking trusted sinks), and any ancestor with $`\ell_{\mathcal{C}}(v) \not\sqsubseteq_{\mathcal{C}} \text{clear}(e)`$ blocks egress $e$. Under SHA-256 collision resistance and `0x00`/`0x01` domain separation, modifying or truncating any leaf $i < m$ fails `MTLog` verification against witnessed $`\text{STH}_m`$ in $`O(\log N)`$ time.  
+  *Proof Sketch:* Immediate by topological induction via absorptivity of $`\sqcup_{\mathcal{I}}, \sqcup_{\mathcal{C}}`$ and collision reduction at the lowest differing Merkle node. $`\square`$
 
-* **Theorem 4 (Dynamic Regret, Feasibility & Risk Control):** Under variation budget $B_T$ and Slater margin $\rho > 0$, `CA-DPD-LinUCB` achieves $\widetilde{\mathcal{O}}(d^{2/3} B_T^{1/3} T^{2/3} + \rho^{-1}\sqrt{MT})$ dynamic regret and sublinear constraint violation. Under arbitrary distribution shift, Online Conformal PID bounds long-run selective risk by $\alpha + \mathcal{O}(1/(\eta T))$. $\square$
+* **Theorem 4 (Dynamic Regret, Feasibility & Risk Control):** Under variation budget $`B_T`$ and Slater margin $`\rho > 0`$, `CA-DPD-LinUCB` achieves $`\widetilde{\mathcal{O}}(d^{2/3} B_T^{1/3} T^{2/3} + \rho^{-1}\sqrt{MT})`$ dynamic regret and sublinear constraint violation. Under arbitrary distribution shift, Online Conformal PID bounds long-run selective risk by $`\alpha + \mathcal{O}(1/(\eta T))`$. $`\square`$
 
-* **Theorem 5 (Cross-Plane Non-Decomposability & C-DoW Bound):** Under any decoupled security-blind router and reactive sleep manager, $K$ untrusted peak-hour prompts induce worst-case energy $K(E_{T_3} + E_{\text{wake}})$. Under `PCSP + PA-PCS-PMC`, unauthorized hops incur `0.0 J` wakeup energy, unauthenticated untrusted prompts are bounded by $K E_{T_1}$ (or $K E_{T_{0\text{b}}}$), and every footprint is committed in $O(\log N)$ CCEC proofs. $\square$
+* **Theorem 5 (Cross-Plane Non-Decomposability & C-DoW Bound):** Under any decoupled security-blind router and reactive sleep manager, $K$ untrusted peak-hour prompts induce worst-case energy $`K(E_{T_3} + E_{\text{wake}})`$. Under `PCSP + PA-PCS-PMC`, unauthorized hops incur `0.0 J` wakeup energy, unauthenticated untrusted prompts are bounded by $`K E_{T_1}`$ (or $`K E_{T_{0\text{b}}}`$), and every footprint is committed in $`O(\log N)`$ CCEC proofs. $`\square`$
 
 </details>
 
@@ -224,15 +224,15 @@ Every component was built against an automated 7-layer verification harness (`te
 ### Stage 4: Multi-Seed Statistical Benchmark Design
 Our evaluation harness (`experiments/run_nosih_evaluation.py`) avoids single-run cherry-picking by enforcing:
 * **240-Prompt Six-Category Workload** (40 prompts each: Symbolic Math/AST, Policy RAG, Simple Factual, Medium Analytical/Coding, Complex Multi-Step, and Ambiguous/Recurring Cacheable) exported verbatim to [`results/benchmarks/benchmark_prompts_240.jsonl`](results/benchmarks/benchmark_prompts_240.jsonl).
-* **3-System Comparative Protocol** over a 12-hour diurnal grid window (`09:00–21:00`): **Static Always-On Large ($T_3$)** vs. **Fixed-Threshold Energy-Only Router** (no symbolic offload, no `PS-RCSC`, no carbon duals, fixed `10 s` sleep timeout) vs. **Full NOSIH**.
-* **Multi-Seed Non-Parametric Inference:** 3 fixed seeds (`42, 101, 202`) for the primary diurnal benchmark, 5 fixed seeds (`11, 22, 33, 44, 55`) for Conformal PID under shift, two-tailed paired **Wilcoxon signed-rank tests**, **Rank-Biserial effect sizes ($r_{\text{rb}}$)**, 95% confidence intervals, and **95% Wilson score intervals** for binary security outcomes.
+* **3-System Comparative Protocol** over a 12-hour diurnal grid window (`09:00–21:00`): **Static Always-On Large ($`T_3`$)** vs. **Fixed-Threshold Energy-Only Router** (no symbolic offload, no `PS-RCSC`, no carbon duals, fixed `10 s` sleep timeout) vs. **Full NOSIH**.
+* **Multi-Seed Non-Parametric Inference:** 3 fixed seeds (`42, 101, 202`) for the primary diurnal benchmark, 5 fixed seeds (`11, 22, 33, 44, 55`) for Conformal PID under shift, two-tailed paired **Wilcoxon signed-rank tests**, **Rank-Biserial effect sizes ($`r_{\text{rb}}`$)**, 95% confidence intervals, and **95% Wilson score intervals** for binary security outcomes.
 * **7-Condition Component Ablation (`n=120`)** and **Scalability Sweep (`20–240` queries)**.
 
 ### Stage 5: Honest Hardware Probing & Strict Accounting Separation
 At runtime, [`src/nosih/plane3_execution/hardware_probe.py`](src/nosih/plane3_execution/hardware_probe.py) inspects the host environment and records [`results/benchmarks/hardware_environment.json`](results/benchmarks/hardware_environment.json):
 * **Host Environment:** `Linux-6.12.105+-x86_64-with-glibc2.36`, Python `3.11.2`, `2` logical CPUs, `rapl_available: false`, `nvml_available: false`, `gpu_detected: null`.
 * **Physically Measured on Host CPU:** All Plane I cryptography, RFC 8785 JCS parsing, SQLite WAL concurrency races (`16`-thread `jti`, `8`-thread split-payout), Merkle proof generation/verification, and Plane III CPU symbolic engines (`SafeDecimalAST`, L2 TF-IDF RAG, 1024-pt FFT/Sobel).
-* **Explicitly Tagged Neural Profiles:** Because physical NVML/RAPL wattmeters and local GPU weights are absent in our air-gapped CPU container, neural tier power and energy (`T1` 3B `52 W` / `$0.10/M`, `T2` 8B `115 W` / `$0.25/M`, `T3` 32B `175 W` / `$0.85/M`, $\phi_{\text{phase}} = 0.85$, `PUE = 1.0`, `$0.12/kWh`) are explicitly tagged `HYBRID_CPU_TDP` and `CALIBRATED_TRACE_SIM` in every benchmark record and CCEC certificate.
+* **Explicitly Tagged Neural Profiles:** Because physical NVML/RAPL wattmeters and local GPU weights are absent in our air-gapped CPU container, neural tier power and energy (`T1` 3B `52 W` / `$0.10/M`, `T2` 8B `115 W` / `$0.25/M`, `T3` 32B `175 W` / `$0.85/M`, $`\phi_{\text{phase}} = 0.85`$, `PUE = 1.0`, `$0.12/kWh`) are explicitly tagged `HYBRID_CPU_TDP` and `CALIBRATED_TRACE_SIM` in every benchmark record and CCEC certificate.
 
 ### Stage 6: Automated Claim-to-Evidence Parity Gate (`58/58` Claims)
 [`experiments/verify_nosih_claims.py`](experiments/verify_nosih_claims.py) parses `results/benchmarks/nosih_evaluation_results.json`, `results/tests/test_suite_summary.json`, and `paper/nosih_paper.tex` to verify **58 exact numerical claims**, live CPU micro-timing bounds (`proxy_p95 < 15 ms`, `merkle_inc < 50 µs`, `merkle_cons < 50 µs`), and **zero forbidden terms** across the paper, README, and `src/nosih/`. Results are emitted to [`results/verification/claim_evidence_matrix.json`](results/verification/claim_evidence_matrix.json) (`58/58` verified, `0` timing failures, `0` violations).
@@ -245,44 +245,44 @@ At runtime, [`src/nosih/plane3_execution/hardware_probe.py`](src/nosih/plane3_ex
 
 | Symbol | Definition |
 | :--- | :--- |
-| $q_t,\; \mathbf{x}_t$ | Input query at step $t$ and 10D anti-spoofing CPU feature vector ($\mathbb{R}^{10}$) |
-| $\mathcal{A}$ | Five execution tiers $\lbrace T_{0\text{a}}, T_{0\text{b}}, T_1, T_2, T_3 \rbrace$ (Cache `2.5 W`, CPU Ops `4.5 W`, 3B `52 W`, 8B `115 W`, 32B `175 W`) |
+| $`q_t,\; \mathbf{x}_t`$ | Input query at step $t$ and 10D anti-spoofing CPU feature vector ($`\mathbb{R}^{10}`$) |
+| $`\mathcal{A}`$ | Five execution tiers $`\lbrace T_{0\text{a}}, T_{0\text{b}}, T_1, T_2, T_3 \rbrace`$ (Cache `2.5 W`, CPU Ops `4.5 W`, 3B `52 W`, 8B `115 W`, 32B `175 W`) |
 | $C(t)$ | Diurnal grid carbon intensity (`gCO₂eq/kWh`), spanning `[180, 520] gCO₂eq/kWh` |
-| $E(m),\; L(m)$ | Expected energy (`kWh`) and latency (`ms`) of tier $m$ |
-| $\mathbf{V}_{t,a},\; \boldsymbol{\mu}_t$ | Exponentially discounted Gram matrix and online primal-dual Lagrangian multipliers |
-| $\alpha,\; \tau_t^{\text{route}},\; \tau_t^{\text{cache}}$ | Target risk level (`0.05`) and Dual-Channel Online Conformal PID thresholds |
-| $\kappa$ | RFC 8785 JCS provenance partition digest for `PS-RCSC` semantic caching |
-| $\mathcal{L} = \mathcal{I} \times \mathcal{C}$ | `POST-W++` Integrity × Confidentiality product lattice with join/meet operators $(\oplus, \otimes)$ |
-| $C_k,\; \text{jti},\; B_w$ | Offline-attenuated `SPCCE-Macaroon`, 128-bit SQLite WAL replay nonce, and exact-`Decimal` linear budget |
-| $s_m,\; \tau_{\text{be}}$ | Tier power state (`ACTIVE` / `WARM_STANDBY` / `DEEP_SLEEP`) and EWMA break-even idle threshold |
+| $`E(m),\; L(m)`$ | Expected energy (`kWh`) and latency (`ms`) of tier $m$ |
+| $`\mathbf{V}_{t,a},\; \boldsymbol{\mu}_t`$ | Exponentially discounted Gram matrix and online primal-dual Lagrangian multipliers |
+| $`\alpha,\; \tau_t^{\text{route}},\; \tau_t^{\text{cache}}`$ | Target risk level (`0.05`) and Dual-Channel Online Conformal PID thresholds |
+| $`\kappa`$ | RFC 8785 JCS provenance partition digest for `PS-RCSC` semantic caching |
+| $`\mathcal{L} = \mathcal{I} \times \mathcal{C}`$ | `POST-W++` Integrity × Confidentiality product lattice with join/meet operators $`(\oplus, \otimes)`$ |
+| $`C_k,\; \text{jti},\; B_w`$ | Offline-attenuated `SPCCE-Macaroon`, 128-bit SQLite WAL replay nonce, and exact-`Decimal` linear budget |
+| $`s_m,\; \tau_{\text{be}}`$ | Tier power state (`ACTIVE` / `WARM_STANDBY` / `DEEP_SLEEP`) and EWMA break-even idle threshold |
 
 ---
 
 ### Plane I: Zero-Trust Security Kernel (`CAT-PLM`)
 Located in `src/nosih/plane1_security/`:
-* **Strict RFC 8785 JCS & Signed Boot Manifest (`jcs_v3.py`, `proxy_v3.py`):** Every JSON-RPC 2.0 frame is validated by an anti-differential parser rejecting duplicate keys, non-finite IEEE 754 floats, integers outside $\pm(2^{53}-1)$, and lone UTF-16 surrogates prior to canonical serialization. At startup, an out-of-band HMAC-SHA256 signed manifest pins every permitted tool schema digest (eliminating Day-0 Trust-On-First-Use). Subsequent `tools/list` and `tools/call` frames re-verify digests, stripping mutated tools and emitting `RUG_PULL_DETECTED`.
-* **Offline-Attenuable Capabilities (`spcce_v3.py`):** Root secrets enforce $\ge 256$-bit entropy per `key_id` with no default fallback. Per-session root keys derive via RFC 5869 HKDF-SHA256:
+* **Strict RFC 8785 JCS & Signed Boot Manifest (`jcs_v3.py`, `proxy_v3.py`):** Every JSON-RPC 2.0 frame is validated by an anti-differential parser rejecting duplicate keys, non-finite IEEE 754 floats, integers outside $`\pm(2^{53}-1)`$, and lone UTF-16 surrogates prior to canonical serialization. At startup, an out-of-band HMAC-SHA256 signed manifest pins every permitted tool schema digest (eliminating Day-0 Trust-On-First-Use). Subsequent `tools/list` and `tools/call` frames re-verify digests, stripping mutated tools and emitting `RUG_PULL_DETECTED`.
+* **Offline-Attenuable Capabilities (`spcce_v3.py`):** Root secrets enforce $`\ge 256`$-bit entropy per `key_id` with no default fallback. Per-session root keys derive via RFC 5869 HKDF-SHA256:
 
 ```math
-K_{s,u} = \operatorname{HKDF\text{-}SHA256}\!\left(K_{\text{root}}[\text{kid}],\; u \parallel \texttt{":"} \parallel s,\; \texttt{"NOSIH-CAP-ROOT"}\right)
+K_{s,u} = \mathrm{HKDF\text{-}SHA256}\!\left(K_{\text{root}}[\text{kid}],\; u \parallel \mathrm{":"} \parallel s,\; \mathrm{NOSIH\text{-}CAP\text{-}ROOT}\right)
 ```
 
-From $\sigma_0 = \operatorname{HMAC\text{-}SHA256}(K_{s,u}, \texttt{ROOT} \parallel \operatorname{JCS}(\text{header}))$, parent DAG nodes attenuate capabilities offline for child hop $v_{k+1}$ without possessing $K_{s,u}$ by chaining caveats $c_{k+1}$ (tool allowlists, exact-`Decimal` ceilings, hop/schema pins, TTLs, and 128-bit CSPRNG `jti`s):
+From $`\sigma_0 = \mathrm{HMAC\text{-}SHA256}(K_{s,u}, \mathrm{ROOT} \parallel \mathrm{JCS}(\text{header}))`$, parent DAG nodes attenuate capabilities offline for child hop $`v_{k+1}`$ without possessing $`K_{s,u}`$ by chaining caveats $`c_{k+1}`$ (tool allowlists, exact-`Decimal` ceilings, hop/schema pins, TTLs, and 128-bit CSPRNG `jti`s):
 
 ```math
-\sigma_{k+1} = \operatorname{HMAC\text{-}SHA256}\!\left(\sigma_k,\; \texttt{CAV} \parallel \operatorname{JCS}(c_{k+1})\right)
+\sigma_{k+1} = \mathrm{HMAC\text{-}SHA256}\!\left(\sigma_k,\; \mathrm{CAV} \parallel \mathrm{JCS}(c_{k+1})\right)
 ```
 
-* **Provenance Semiring & Linear Budgets (`postw_v3.py`):** Every value carries $\tau(v) = (\ell_{\mathcal{I}}, \ell_{\mathcal{C}}, W, h_{\text{deriv}})$ over $\mathcal{L} = \mathcal{I} \times \mathcal{C}$. Integrity is totally ordered $\text{HUMAN}(0) \sqsubset \text{GOV}(1) \sqsubset \text{ERP}(2) \sqsubset \text{POLICY}(3) \sqsubset \text{USER}(4) \sqsubset \text{DET}(5) \sqsubset \text{UNTRUSTED}(6)$ ($\sqcup_{\mathcal{I}} = \max$). Confidentiality combines sensitivity tier with reader-set intersection: $(t_1, R_1) \sqcup_{\mathcal{C}} (t_2, R_2) = (\max(t_1, t_2), R_1 \cap R_2)$. Financial witnesses track exact-`Decimal` linear budgets decremented atomically inside SQLite WAL `BEGIN IMMEDIATE` transactions with automatic rollback on downstream failure. Egress webhooks enforce $\ell_{\mathcal{C}} \sqsubseteq_{\mathcal{C}} \text{clear}(e)$ alongside plaintext, Base64, hex, chunked, and high-entropy exfiltration scanners.
-* **Merkle Transparency & Shadow Quarantine (`merkle_log.py`, `shadow_v3.py`, `carbon_cert.py`):** Audit and CCEC events append atomically to an RFC 6962/9162 binary Merkle tree with domain-separated leaf (`0x00`) and interior (`0x01`) SHA-256 hashing, producing Signed Tree Heads (STHs) and $O(\log N)$ inclusion/consistency proofs. Blocked sink calls are diverted to `CSDDShadowSink`, returning MAC-authenticated, Merkle-anchored quarantine receipts.
+* **Provenance Semiring & Linear Budgets (`postw_v3.py`):** Every value carries $`\tau(v) = (\ell_{\mathcal{I}}, \ell_{\mathcal{C}}, W, h_{\text{deriv}})`$ over $`\mathcal{L} = \mathcal{I} \times \mathcal{C}`$. Integrity is totally ordered $`\text{HUMAN}(0) \sqsubset \text{GOV}(1) \sqsubset \text{ERP}(2) \sqsubset \text{POLICY}(3) \sqsubset \text{USER}(4) \sqsubset \text{DET}(5) \sqsubset \text{UNTRUSTED}(6)`$ ($`\sqcup_{\mathcal{I}} = \max`$). Confidentiality combines sensitivity tier with reader-set intersection: $`(t_1, R_1) \sqcup_{\mathcal{C}} (t_2, R_2) = (\max(t_1, t_2), R_1 \cap R_2)`$. Financial witnesses track exact-`Decimal` linear budgets decremented atomically inside SQLite WAL `BEGIN IMMEDIATE` transactions with automatic rollback on downstream failure. Egress webhooks enforce $`\ell_{\mathcal{C}} \sqsubseteq_{\mathcal{C}} \text{clear}(e)`$ alongside plaintext, Base64, hex, chunked, and high-entropy exfiltration scanners.
+* **Merkle Transparency & Shadow Quarantine (`merkle_log.py`, `shadow_v3.py`, `carbon_cert.py`):** Audit and CCEC events append atomically to an RFC 6962/9162 binary Merkle tree with domain-separated leaf (`0x00`) and interior (`0x01`) SHA-256 hashing, producing Signed Tree Heads (STHs) and $`O(\log N)`$ inclusion/consistency proofs. Blocked sink calls are diverted to `CSDDShadowSink`, returning MAC-authenticated, Merkle-anchored quarantine receipts.
 
 ---
 
 ### Plane II: Carbon-Conformal Control Plane
 Located in `src/nosih/plane2_control/`:
-* **Anti-Spoofing 10D CPU Profiler (`profiler_v3.py`):** Extracts normalized length, symbolic operator cues, risk density, lexical uniqueness, and token/character Shannon entropy in `<0.02 ms`, catching both repetition stuffing ($n > 15 \land u < 0.55$) and unique-filler denial-of-wallet attacks ($n > 25 \land u > 0.85 \land \text{risk\_density} < 0.06$).
-* **Provenance-Scoped Semantic Cache (`provenance_cache.py`, `PS-RCSC`):** Partitions cached responses by canonical JCS digest $\kappa$ over `(tenant, corpus_ver, model_ver, policy_epoch, origin_integrity, schema_digest)`. Untrusted or high-risk ($r_{\text{risk}} \ge 0.50$) queries bypass caching; deterministic queries take a `0.018 ms` cost-aware bypass; eligible neural queries run float32 BLAS cosine lookup gated by polarity/numeric signatures and Channel-2 Conformal $p$-values.
-* **Diurnal Carbon Forecaster & `CA-DPD-LinUCB` (`primal_dual_bandit.py`, `power_carbon.py`):** Models continuous intraday grid carbon $C(t) \in [180, 520]\;\text{gCO}_2\text{eq/kWh}$ as a solar-trough / evening-peak curve plus an Ornstein–Uhlenbeck residual blended with live telemetry via $w(\Delta t) = e^{-\Delta t / 900}$:
+* **Anti-Spoofing 10D CPU Profiler (`profiler_v3.py`):** Extracts normalized length, symbolic operator cues, risk density, lexical uniqueness, and token/character Shannon entropy in `<0.02 ms`, catching both repetition stuffing ($`n > 15 \land u < 0.55`$) and unique-filler denial-of-wallet attacks ($`n > 25 \land u > 0.85 \land r_{\mathrm{risk}} < 0.06`$).
+* **Provenance-Scoped Semantic Cache (`provenance_cache.py`, `PS-RCSC`):** Partitions cached responses by canonical JCS digest $`\kappa`$ over `(tenant, corpus_ver, model_ver, policy_epoch, origin_integrity, schema_digest)`. Untrusted or high-risk ($`r_{\text{risk}} \ge 0.50`$) queries bypass caching; deterministic queries take a `0.018 ms` cost-aware bypass; eligible neural queries run float32 BLAS cosine lookup gated by polarity/numeric signatures and Channel-2 Conformal $p$-values.
+* **Diurnal Carbon Forecaster & `CA-DPD-LinUCB` (`primal_dual_bandit.py`, `power_carbon.py`):** Models continuous intraday grid carbon $`C(t) \in [180, 520]\;\text{gCO}_2\text{eq/kWh}`$ as a solar-trough / evening-peak curve plus an Ornstein–Uhlenbeck residual blended with live telemetry via $`w(\Delta t) = e^{-\Delta t / 900}`$:
 
 ```math
 C_{\text{det}}(h) = 355 - 175\,e^{-\frac{(h-13)^2}{2(2.6)^2}} + 165\,e^{-\frac{(h-19.5)^2}{2(2.1)^2}} + 20\cos\!\left(\frac{2\pi(h-2.5)}{24}\right)
@@ -295,12 +295,12 @@ C_{\text{det}}(h) = 355 - 175\,e^{-\frac{(h-13)^2}{2(2.6)^2}} + 165\,e^{-\frac{(
 ```
 
 ```math
-a_t = \arg\max_{a \in \mathcal{A}_t} \left\lbrace \operatorname{UCB}_{t,a}^{r}(\mathbf{x}_t) - \sum_{m=1}^{M} \mu_t^{(m)} \!\left(\operatorname{LCB}_{t,a}^{(m)}(\mathbf{x}_t) - b^{(m)}\right) \right\rbrace
+a_t = \arg\max_{a \in \mathcal{A}_t} \left\lbrace \mathrm{UCB}_{t,a}^{r}(\mathbf{x}_t) - \sum_{m=1}^{M} \mu_t^{(m)} \!\left(\mathrm{LCB}_{t,a}^{(m)}(\mathbf{x}_t) - b^{(m)}\right) \right\rbrace
 ```
 
-with online dual updates $\mu_{t+1}^{(m)} = \Pi_{[0,\mu_{\max}]}(\mu_t^{(m)} + \eta_\mu(c_t^{(m)} - b^{(m)}))$ over energy, carbon ($\hat{E}\cdot C(t)$), and latency constraints.
+with online dual updates $`\mu_{t+1}^{(m)} = \Pi_{[0,\mu_{\max}]}(\mu_t^{(m)} + \eta_\mu(c_t^{(m)} - b^{(m)}))`$ over energy, carbon ($`\hat{E}\cdot C(t)`$), and latency constraints.
 
-* **Dual-Channel Online Conformal PID (`online_conformal.py`):** Adapts selective acceptance threshold $\tau_t^{\text{route}}$ under arbitrary distribution shift:
+* **Dual-Channel Online Conformal PID (`online_conformal.py`):** Adapts selective acceptance threshold $`\tau_t^{\text{route}}`$ under arbitrary distribution shift:
 
 ```math
 \tau_{t+1}^{\text{route}} = \Pi_{[\tau_{\min}, \tau_{\max}]}\!\left(\tau_t^{\text{route}} + \eta(\alpha - \ell_t) + k_I \tanh\!\left(\frac{1}{5}\sum_{j=t-W}^{t}(\alpha - \ell_j)\right)\right)
@@ -312,10 +312,10 @@ with online dual updates $\mu_{t+1}^{(m)} = \Pi_{[0,\mu_{\max}]}(\mu_t^{(m)} + \
 Located in `src/nosih/plane3_execution/`:
 * **Deterministic CPU Symbolic Engines (`tools.py`):** `SafeDecimalAST` (exact decimal arithmetic with zero `eval()`), L2-normalized TF-IDF Policy RAG, and 1024-pt FFT / Sobel signal operators running at `4.5 W` and `$0` API cost.
 * **Async DAG Executor & Durable Replay (`dag_executor.py`, `replay_engine.py`, `providers.py`):** Event-driven `asyncio` ready-queue with per-node `wait_for` cancellation, Kahn topological sort + abstract-interpretation static IFC, 3-state circuit breakers (`CLOSED`/`OPEN`/`HALF_OPEN`), and SQLite WAL `JournalStore` supporting `RECORD`, bit-identical `REPLAY`, and `COUNTERFACTUAL_DIFF`.
-* **Predictive Multi-State GPU Power Control (`power_carbon.py`, `PCS-PMC`):** Manages neural tiers across `ACTIVE` (`18–45 W` idle VRAM), `WARM_STANDBY` (`8–18 W`, `100–180 ms` wake), and `DEEP_SLEEP` (`2.5 W` RAM-paged, `0.85–1.40 s` wake). Demotion $a \to b$ triggers once idle duration exceeds the hysteresis-scaled break-even threshold:
+* **Predictive Multi-State GPU Power Control (`power_carbon.py`, `PCS-PMC`):** Manages neural tiers across `ACTIVE` (`18–45 W` idle VRAM), `WARM_STANDBY` (`8–18 W`, `100–180 ms` wake), and `DEEP_SLEEP` (`2.5 W` RAM-paged, `0.85–1.40 s` wake). Demotion $`a \to b`$ triggers once idle duration exceeds the hysteresis-scaled break-even threshold:
 
 ```math
-\tau_{\text{be}}(m, a \to b) = \frac{E_{\text{trans}}(m, a \to b) + E_{\text{wake}}(m, b \to \texttt{ACT})}{P_{\text{idle}}(m, a) - P_{\text{idle}}(m, b)}, \qquad H_m = \eta_{\text{down}}\big(1 + \kappa\min(\operatorname{CV}_m, 2.0)\big)
+\tau_{\text{be}}(m, a \to b) = \frac{E_{\text{trans}}(m, a \to b) + E_{\text{wake}}(m, b \to \mathrm{ACT})}{P_{\text{idle}}(m, a) - P_{\text{idle}}(m, b)}, \qquad H_m = \eta_{\text{down}}\big(1 + \kappa\min(\mathrm{CV}_m, 2.0)\big)
 ```
 
 ---
@@ -323,27 +323,29 @@ Located in `src/nosih/plane3_execution/`:
 ### Explicit 7-Stage Closed-Loop Execution Lifecycle (`ZeroTrustKernel`)
 
 Every call to `ZeroTrustKernel.execute_request()` records an auditable `stage_trace` across seven deterministic stages:
-1. **Stage 1 — Ingress & Policy Provenance Binding:** Strips private evaluator fields, binds policy-derived provenance $\tau_0 = (\ell_{\mathcal{I}}, \ell_{\mathcal{C}}, \emptyset)$, and extracts the 10D CPU feature vector $\mathbf{x}_t$ (`<0.02 ms`).
-2. **Stage 2 — Provenance-Scoped Semantic Cache (`PS-RCSC`):** Evaluates partition key $\kappa$, bypasses untrusted/high-risk or low-latency deterministic queries, and checks float32 BLAS + Channel-2 Conformal admission (short-circuiting on hit).
-3. **Stage 3 — Carbon-Conformal Dispatch (`CA-DPD-LinUCB` + `PCSP`):** Reads live/forecast $C(t)$, dual prices $\boldsymbol{\mu}_t$, and provenance taint $\iota$ to select tier $a_t \in \lbrace T_{0\text{b}}, T_1, T_2, T_3 \rbrace$ and compile a typed acyclic DAG $G = (V, E)$.
+1. **Stage 1 — Ingress & Policy Provenance Binding:** Strips private evaluator fields, binds policy-derived provenance $`\tau_0 = (\ell_{\mathcal{I}}, \ell_{\mathcal{C}}, \emptyset)`$, and extracts the 10D CPU feature vector $`\mathbf{x}_t`$ (`<0.02 ms`).
+2. **Stage 2 — Provenance-Scoped Semantic Cache (`PS-RCSC`):** Evaluates partition key $`\kappa`$, bypasses untrusted/high-risk or low-latency deterministic queries, and checks float32 BLAS + Channel-2 Conformal admission (short-circuiting on hit).
+3. **Stage 3 — Carbon-Conformal Dispatch (`CA-DPD-LinUCB` + `PCSP`):** Reads live/forecast $C(t)$, dual prices $`\boldsymbol{\mu}_t`$, and provenance taint $`\iota`$ to select tier $`a_t \in \lbrace T_{0\text{b}}, T_1, T_2, T_3 \rbrace`$ and compile a typed acyclic DAG $G = (V, E)$.
 4. **Stage 4 — Static Graph & IFC Verification:** Runs Kahn topological sort and abstract-interpretation IFC, rejecting cyclic graphs or `UNTRUSTED` flows into privileged sinks before any capability is minted.
 5. **Stage 5 — Session Capability Minting (`SPCCE-Macaroon`):** Plane I mints a session Macaroon bound to the RFC 8785 JCS digest of the verified DAG plan.
 6. **Stage 6 — Capability-Gated Execution, `PA-PCS-PMC` Power Control & `MTLog` / `CCEC` Audit:** Attenuates per-hop Macaroons offline with 128-bit `jti`, authorizes BEFORE waking sleeping GPUs, wraps outputs in `ProvenanceValue`, journals to SQLite WAL, and commits CCEC carbon receipts to `MTLog`.
-7. **Stage 7 — Closed-Loop Control Update:** Updates Channel-1 Conformal PID $\tau_{t+1}^{\text{route}}$, bandit precision matrix $\mathbf{V}_{t,a}$, and carbon/latency dual multipliers $\boldsymbol{\mu}_{t+1}$.
+7. **Stage 7 — Closed-Loop Control Update:** Updates Channel-1 Conformal PID $`\tau_{t+1}^{\text{route}}`$, bandit precision matrix $`\mathbf{V}_{t,a}`$, and carbon/latency dual multipliers $`\boldsymbol{\mu}_{t+1}`$.
 
 ---
 
 ### Three Irreducible Cross-Plane Novelties
 
-1. **Provenance-Coupled Carbon-Security Pricing (`PCSP`, `plane2_control/pcsp.py`):** Injects Plane I provenance taint $\iota \in \lbrace 0, \dots, 6 \rbrace$ directly into Plane II's carbon-routing Lagrangian:
+1. **Provenance-Coupled Carbon-Security Pricing (`PCSP`, `plane2_control/pcsp.py`):** Injects Plane I provenance taint $`\iota \in \lbrace 0, \dots, 6 \rbrace`$ directly into Plane II's carbon-routing Lagrangian:
 
 ```math
 \Phi_{\text{PCSP}}(\iota, a, C(t)) = \lambda_{\text{sec}} \cdot \frac{\iota}{6} \cdot \frac{P_a}{P_{T_3}} \cdot \frac{C(t)}{C_{\text{ref}}}
 ```
 
-Unauthenticated `UNTRUSTED` traffic is capped at $T_1$ (or $T_{0\text{b}}$) with tightened conformal risk $\alpha_{\text{eff}} = 0.025$, neutralizing **Carbon-Denial-of-Wallet (C-DoW)** by **96.9%**.
-2. **Pre-Authorized, Carbon-Modulated Sleep Control (`PA-PCS-PMC`, `plane3_execution/power_carbon.py`):** Executes Plane I's `<4 ms` Macaroon/IFC check *before* waking any sleeping GPU tier (`0.0 J` wasted on unauthorized hops) and scales idle demotion thresholds inversely with grid carbon: $M_C(t) = \operatorname{clip}(C_{\text{ref}} / C(t), 0.65, 1.35)$ so GPUs sleep more aggressively during fossil peaks.
-3. **Cryptographic Carbon-Attested Execution Certificates (`CCEC`, `plane1_security/carbon_cert.py`):** Commits `(tier, energy_kwh, grid_carbon, co2_g, accounting_mode, hw_digest)` as RFC 8785 JCS leaves in Plane I's `MTLog`, enabling $O(\log N)$ Scope-2 ESG auditability and cryptographically rejecting simulated traces masquerading as hardware wattmeter telemetry.
+   Unauthenticated `UNTRUSTED` traffic is capped at $`T_1`$ (or $`T_{0\text{b}}`$) with tightened conformal risk $`\alpha_{\text{eff}} = 0.025`$, neutralizing **Carbon-Denial-of-Wallet (C-DoW)** by **96.9%**.
+
+2. **Pre-Authorized, Carbon-Modulated Sleep Control (`PA-PCS-PMC`, `plane3_execution/power_carbon.py`):** Executes Plane I's `<4 ms` Macaroon/IFC check *before* waking any sleeping GPU tier (`0.0 J` wasted on unauthorized hops) and scales idle demotion thresholds inversely with grid carbon: $`M_C(t) = \mathrm{clip}(C_{\text{ref}} / C(t), 0.65, 1.35)`$ so GPUs sleep more aggressively during fossil peaks.
+
+3. **Cryptographic Carbon-Attested Execution Certificates (`CCEC`, `plane1_security/carbon_cert.py`):** Commits `(tier, energy_kwh, grid_carbon, co2_g, accounting_mode, hw_digest)` as RFC 8785 JCS leaves in Plane I's `MTLog`, enabling $`O(\log N)`$ Scope-2 ESG auditability and cryptographically rejecting simulated traces masquerading as hardware wattmeter telemetry.
 
 ---
 
@@ -353,14 +355,14 @@ All metrics below are reproduced verbatim from [`results/benchmarks/nosih_evalua
 
 ### 5.1 Primary 3-System Diurnal Benchmark & Goal-Normalized Efficiency (`n = 240`, Seed `42`)
 
-| Metric | Static Always-On Large ($T_3$) | Fixed-Threshold Energy-Only Router | **Full NOSIH (Ours)** | $\Delta$ vs. Static | $\Delta$ vs. Fixed | Paired Wilcoxon $p$ / $r_{\text{rb}}$ |
+| Metric | Static Always-On Large ($`T_3`$) | Fixed-Threshold Energy-Only Router | **Full NOSIH (Ours)** | $`\Delta`$ vs. Static | $`\Delta`$ vs. Fixed | Paired Wilcoxon $p$ / $`r_{\text{rb}}`$ |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Mean Latency (ms)** | $2200.2 \pm 39.7$ | $987.4 \pm 87.4$ | **$707.6 \pm 113.8$** | **-67.8%** | -28.3% | $p = 2.69 \times 10^{-37}$ / $r_{\text{rb}} = 0.9502$ |
-| **Energy / Query (kWh)** | $9.37 \times 10^{-5} \pm 1.69 \times 10^{-6}$ | $2.85 \times 10^{-5}$ | **$2.32 \times 10^{-5} \pm 4.49 \times 10^{-6}$** | **-75.2%** | -18.5% | $p = 1.26 \times 10^{-38}$ / $r_{\text{rb}} = 0.9678$ |
-| **CO₂ / Query (g)** | $0.0290 \pm 0.0016$ | $0.0111$ | **$0.0091 \pm 0.0019$** | **-68.7%** | -18.2% | $p = 1.43 \times 10^{-37}$ / $r_{\text{rb}} = 0.9539$ |
-| **Cost / Query (USD)** | $2.80 \times 10^{-4} \pm 1.62 \times 10^{-5}$ | $1.26 \times 10^{-4}$ | **$1.03 \times 10^{-4} \pm 2.34 \times 10^{-5}$** | **-63.1%** | -17.7% | $p = 7.86 \times 10^{-39}$ / $r_{\text{rb}} = 0.9705$ |
-| **Total Active Energy (kWh)** | `0.022479` | `0.006830` | **`0.005567`** | **-75.2%** | **-18.5%** | $p = 1.15 \times 10^{-13}$ (vs. Fixed) |
-| **Total Operational CO₂ (g)** | `6.9487` | `2.6549` | **`2.1728`** | **-68.7%** | **-18.2%** | $p = 2.36 \times 10^{-12}$ (vs. Fixed) |
+| **Mean Latency (ms)** | $2200.2 \pm 39.7$ | $987.4 \pm 87.4$ | **$707.6 \pm 113.8$** | **-67.8%** | -28.3% | $`p = 2.69 \times 10^{-37}`$ / $`r_{\text{rb}} = 0.9502`$ |
+| **Energy / Query (kWh)** | $9.37 \times 10^{-5} \pm 1.69 \times 10^{-6}$ | $2.85 \times 10^{-5}$ | **$2.32 \times 10^{-5} \pm 4.49 \times 10^{-6}$** | **-75.2%** | -18.5% | $`p = 1.26 \times 10^{-38}`$ / $`r_{\text{rb}} = 0.9678`$ |
+| **CO₂ / Query (g)** | $0.0290 \pm 0.0016$ | $0.0111$ | **$0.0091 \pm 0.0019$** | **-68.7%** | -18.2% | $`p = 1.43 \times 10^{-37}`$ / $`r_{\text{rb}} = 0.9539`$ |
+| **Cost / Query (USD)** | $2.80 \times 10^{-4} \pm 1.62 \times 10^{-5}$ | $1.26 \times 10^{-4}$ | **$1.03 \times 10^{-4} \pm 2.34 \times 10^{-5}$** | **-63.1%** | -17.7% | $`p = 7.86 \times 10^{-39}`$ / $`r_{\text{rb}} = 0.9705`$ |
+| **Total Active Energy (kWh)** | `0.022479` | `0.006830` | **`0.005567`** | **-75.2%** | **-18.5%** | $`p = 1.15 \times 10^{-13}`$ (vs. Fixed) |
+| **Total Operational CO₂ (g)** | `6.9487` | `2.6549` | **`2.1728`** | **-68.7%** | **-18.2%** | $`p = 2.36 \times 10^{-12}`$ (vs. Fixed) |
 | **Total Operational Cost (USD)** | `$0.067297` | `$0.030170` | **`$0.024826`** | **-63.1%** | -17.7% | — |
 | **Task Success Rate** | `97.08%` | `90.83%` | **`97.50%`** | `+0.42 pp` | `+6.67 pp` | — |
 | **Energy / Successful Goal (Wh)** | `0.09648` | `0.03133` | **`0.02379`** | **-75.3%** | -24.1% | — |
@@ -379,22 +381,22 @@ All metrics below are reproduced verbatim from [`results/benchmarks/nosih_evalua
 
 ### 5.3 5-Tier Routing Distribution (`n = 240`), 7-Condition Ablation (`n = 120`) & Scalability
 
-**5-Tier Routing Distribution (`n = 240`):** Exactly **50.0%** of all requests are resolved on `<5 W` CPU paths without touching GPU tiers, while only **14.6%** require the `175 W` $T_3$ model:
+**5-Tier Routing Distribution (`n = 240`):** Exactly **50.0%** of all requests are resolved on `<5 W` CPU paths without touching GPU tiers, while only **14.6%** require the `175 W` $`T_3`$ model:
 
 | Execution Tier | Hardware Power & Pricing Profile | Routed Queries | Traffic Share |
 | :--- | :--- | :---: | :---: |
-| **$T_{0\text{a}}$: `PS-RCSC` Semantic Cache** | `2.5 W` CPU · `$0 / M` | `64` | `26.7%` |
-| **$T_{0\text{b}}$: CPU Symbolic Engines** (`SafeDecimalAST`, RAG, FFT/Sobel) | `4.5 W` CPU · `$0 / M` | `56` | `23.3%` |
-| **$T_1$: Small Neural (3B)** | `52 W` · `$0.10 / M` (`HYBRID_CPU_TDP`) | `35` | `14.6%` |
-| **$T_2$: Medium Neural (8B)** | `115 W` · `$0.25 / M` (`HYBRID_CPU_TDP`) | `50` | `20.8%` |
-| **$T_3$: Large Neural (32B)** | `175 W` · `$0.85 / M` (`HYBRID_CPU_TDP`) | `35` | `14.6%` |
+| **$`T_{0\text{a}}`$: `PS-RCSC` Semantic Cache** | `2.5 W` CPU · `$0 / M` | `64` | `26.7%` |
+| **$`T_{0\text{b}}`$: CPU Symbolic Engines** (`SafeDecimalAST`, RAG, FFT/Sobel) | `4.5 W` CPU · `$0 / M` | `56` | `23.3%` |
+| **$`T_1`$: Small Neural (3B)** | `52 W` · `$0.10 / M` (`HYBRID_CPU_TDP`) | `35` | `14.6%` |
+| **$`T_2`$: Medium Neural (8B)** | `115 W` · `$0.25 / M` (`HYBRID_CPU_TDP`) | `50` | `20.8%` |
+| **$`T_3`$: Large Neural (32B)** | `175 W` · `$0.85 / M` (`HYBRID_CPU_TDP`) | `35` | `14.6%` |
 | **Total** | — | **`240`** | **`100.0%`** |
 
 **7-Condition Component Ablation (`n = 120` paired queries):**
 
-| Configuration | Avg Latency (ms) | Total Energy (kWh) | Total CO₂ (g) | $\Delta E$ | $\Delta \text{CO}_2$ | Success Rate | Idle GPU Cut |
+| Configuration | Avg Latency (ms) | Total Energy (kWh) | Total CO₂ (g) | $`\Delta E`$ | $`\Delta \text{CO}_2`$ | Success Rate | Idle GPU Cut |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Static Large ($T_3$ Always-On) | `2205.7` | `0.011267` | `3.4872` | ref | ref | `96.67%` | `0.00%` |
+| Static Large ($`T_3`$ Always-On) | `2205.7` | `0.011267` | `3.4872` | ref | ref | `96.67%` | `0.00%` |
 | `Routing OFF` | `2307.7` | `0.011607` | `3.5877` | `+3.0%` | `+2.9%` | `96.67%` | `72.17%` |
 | `Symbolic OFF` | `823.0` | `0.003071` | `1.1639` | `-72.7%` | `-66.6%` | `90.83%` | `75.25%` |
 | `Cache OFF` | `775.9` | `0.002821` | `1.0821` | `-75.0%` | `-69.0%` | `96.67%` | `78.40%` |
@@ -424,7 +426,7 @@ All metrics below are reproduced verbatim from [`results/benchmarks/nosih_evalua
 | *5. Integrity Lattice Escalation* | `7/7` blocked | Trusted sink boundary check |
 | *6. Unallowlisted Egress Endpoint* | `7/7` blocked | Capability allowlist + egress clearance |
 | *7. Macaroon Scope & Hop Forgery* | `7/7` blocked | HMAC-SHA256 caveat chain verification |
-| *8. Cross-Tenant Cache Poisoning* | `7/7` blocked | `PS-RCSC` provenance key $\kappa$ isolation |
+| *8. Cross-Tenant Cache Poisoning* | `7/7` blocked | `PS-RCSC` provenance key $`\kappa`$ isolation |
 | *9. Malicious Cyclic or IFC-Violating DAG* | `7/7` blocked | Kahn sort + abstract-interpretation IFC |
 | *10. Rug Pull & Merkle Audit Tampering* | `7/7` blocked | Signed boot manifest + RFC 6962/9162 `MTLog` |
 | **Concurrency Race Stress (Physical Host CPU)** | **`1/16` JTI · `1/8` Split-Payout** | SQLite WAL `BEGIN IMMEDIATE` serialization |
@@ -435,7 +437,7 @@ All metrics below are reproduced verbatim from [`results/benchmarks/nosih_evalua
 
 | Benchmark | Metric | Decoupled / Static Baseline | **NOSIH** | Improvement / Significance |
 | :--- | :--- | :---: | :---: | :--- |
-| **5-Seed Conformal PID** ($t \ge 500$ shift) | Post-Shift Selective Risk | `28.88% ± 1.41%` | **`5.30% ± 0.12%`** | Tracks $\alpha = 0.05$ (`74.12% ± 1.17%` acceptance, $p = 9.90 \times 10^{-40}$) |
+| **5-Seed Conformal PID** ($`t \ge 500`$ shift) | Post-Shift Selective Risk | `28.88% ± 1.41%` | **`5.30% ± 0.12%`** | Tracks $`\alpha = 0.05`$ (`74.12% ± 1.17%` acceptance, $`p = 9.90 \times 10^{-40}`$) |
 | **PCSP vs. C-DoW** ($n = 50$, peak grid) | Adversarial Energy / CO₂ | `4.5123 Wh` / `2.1982 g` | **`0.1415 Wh` / `0.0689 g`** | **-96.9%** energy & CO₂ (`50/50` mitigated) |
 | **PA-PCS-PMC vs. Sleep-DoS** ($n = 40$) | Wasted GPU Wakeup Energy | `7000.0 J` | **`0.0 J`** | **-100.0%** wakeup waste (`40/40` blocked pre-wake) |
 | **CCEC Scope-2 Audit** ($N = 240$) | Valid / Tamper / Spoof | Unsigned / Unverified | **`240/240` · `20/20` · `20/20`** | `7` Merkle hashes, `50.44 µs` avg verify |
@@ -616,11 +618,11 @@ Distinct from workload-size energy linearity (`r = 0.9998`), we physically execu
 
 ### 3. Synthetic 168-Hour Carbon Forecast Validation & Conformal PID Convergence
 - **Carbon Forecast (`SYNTHETIC_DIURNAL_OU_BENCHMARK`, 168 h — distinct from live grid APIs):** Deterministic diurnal prior achieves **11.37 gCO₂/kWh MAE** (`14.76` RMSE, `3.63%` MAPE); 5-minute live blending reduces MAE to **4.10 gCO₂/kWh** (`5.33` RMSE); 60-minute stale fallback holds `14.34` RMSE.
-- **Conformal PID Finite-Sample Honesty:** Measured risk at `T_post = 800` is `5.30% ± 0.12%` (above `5.00%` by `+0.30 pp` due to finite-sample integral lag bounded by $O(1/(\eta T))$ in Theorem 4). Extending to `T_post = 3000` converges to **5.07% ± 0.02%**, and a conservative design target `alpha_design = 0.045` holds finite-window risk strictly under 5% at **4.72% ± 0.09%**.
+- **Conformal PID Finite-Sample Honesty:** Measured risk at `T_post = 800` is `5.30% ± 0.12%` (above `5.00%` by `+0.30 pp` due to finite-sample integral lag bounded by $`O(1/(\eta T))`$ in Theorem 4). Extending to `T_post = 3000` converges to **5.07% ± 0.02%**, and a conservative design target `alpha_design = 0.045` holds finite-window risk strictly under 5% at **4.72% ± 0.09%**.
 - **Complete Formal Proofs & Physical GPU Runner:** Full assumptions (`A1–A3`, `B1–B3`, `C1–C2`) and step-by-step derivations for Theorems 1–5 are in [`docs/FORMAL_PROOFS.md`](docs/FORMAL_PROOFS.md), and the physical NVML/RAPL/Ollama deployment script is in [`experiments/run_hardware_validation.py`](experiments/run_hardware_validation.py).
 
 ### 4. Precision Clarifications (CCEC Trust Scope, Theorem 4, Cache Timing & Pricing)
 - **CCEC Trust Scope (Auditable Accounting vs. Hardware TEE Attestation):** CCEC provides tamper-evident, Merkle-auditable Scope-2 accounting records under the host TCB (verified across all `240/240` leaves at `N=240` in `7.93` mean / `8` max hashes, range `7–8`). Hardware-attested sensor authenticity against a compromised host requires TEE/confidential-GPU attestation (e.g., Intel TDX / NVIDIA Confidential Computing) beyond host software.
-- **Theorem 4 Precision:** The exact distribution-free $O(1/(\eta T))$ finite-sample telescoping bound applies strictly to the proportional P-channel ($k_I = 0$); the bounded nonlinear integral term $k_I \tanh(\cdot)$ accelerates post-shift recovery within a bounded $O(k_I/\eta)$ perturbation (full derivation in [`docs/FORMAL_PROOFS.md`](docs/FORMAL_PROOFS.md)).
+- **Theorem 4 Precision:** The exact distribution-free $`O(1/(\eta T))`$ finite-sample telescoping bound applies strictly to the proportional P-channel ($`k_I = 0`$); the bounded nonlinear integral term $`k_I \tanh(\cdot)`$ accelerates post-shift recovery within a bounded $`O(k_I/\eta)`$ perturbation (full derivation in [`docs/FORMAL_PROOFS.md`](docs/FORMAL_PROOFS.md)).
 - **Cache Lookup vs. Cost-Aware Bypass:** Deterministic CPU queries take the `0.018 ms` cost-aware bypass (skipping vector search), while eligible neural queries incur `1.8 ms` for full PS-RCSC float32 BLAS lookup.
 - **Operational Cost Pricing & Concurrency Scope:** Operational cost combines `$0.12/kWh` electricity (`PUE = 1.0`) with nominal token pricing (`$0.10/M` for `T1`, `$0.25/M` for `T2`, `$0.85/M` for `T3`). The 161-request host-CPU concurrency benchmark (`C=1..100`, `727.0 req/s`, `0` errors) validates local `ZeroTrustKernel` + SQLite WAL serialization and does not establish distributed multi-GPU scalability.
