@@ -1,17 +1,17 @@
 <div align="center">
 
-<img src="assets/nosih_hero_banner.gif" alt="NOSIH: Carbon-Aware, Zero-Trust Neuro-Symbolic Orchestration System" width="100%"/>
+<img src="assets/nosih_hero_banner.gif" alt="NOSIH: Carbon-Aware, Zero-Trust Neuro-Symbolic Orchestration System (Monochrome Edition)" width="100%"/>
 
 # NOSIH: A Carbon-Aware, Zero-Trust Neuro-Symbolic Orchestration System for Energy-Efficient Agentic AI
 
 **Closed-Loop Tri-Plane Kernel Unifying Tool-Boundary Cryptographic Isolation (Plane I), Diurnal Carbon-Conformal Routing & Provenance-Scoped Caching (Plane II), and Deterministic CPU Offload & Predictive Multi-State GPU Power Control (Plane III)**
 
-[![Automated Tests](https://img.shields.io/badge/Tests-46%2F46%20Passing-2ea043?style=for-the-badge&logo=pytest&logoColor=white)](results/tests/test_suite_summary.json)
-[![Claim Parity](https://img.shields.io/badge/Claims-58%2F58%20Verified-1f6feb?style=for-the-badge&logo=checkmarx&logoColor=white)](results/verification/claim_evidence_matrix.json)
-[![IEEE Paper](https://img.shields.io/badge/IEEE%20Paper-7%20Pages%20PDF-8957e5?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](paper/nosih_paper.pdf)
-[![Python](https://img.shields.io/badge/Python-3.11%2B-3776ab?style=for-the-badge&logo=python&logoColor=white)](pyproject.toml)
-[![Zero-Trust](https://img.shields.io/badge/Security-Zero--Trust%20CAT--PLM-d29922?style=for-the-badge&logo=letsencrypt&logoColor=white)](SECURITY.md)
-[![License: MIT](https://img.shields.io/badge/License-MIT-007a78?style=for-the-badge)](LICENSE)
+[![Automated Tests](https://img.shields.io/badge/Tests-46%2F46%20Passing-111111?style=for-the-badge&logo=pytest&logoColor=white&labelColor=000000)](results/tests/test_suite_summary.json)
+[![Claim Parity](https://img.shields.io/badge/Claims-58%2F58%20Verified-111111?style=for-the-badge&logo=checkmarx&logoColor=white&labelColor=000000)](results/verification/claim_evidence_matrix.json)
+[![IEEE Paper](https://img.shields.io/badge/IEEE%20Paper-7%20Pages%20PDF-111111?style=for-the-badge&logo=adobeacrobatreader&logoColor=white&labelColor=000000)](paper/nosih_paper.pdf)
+[![Python](https://img.shields.io/badge/Python-3.11%2B-111111?style=for-the-badge&logo=python&logoColor=white&labelColor=000000)](pyproject.toml)
+[![Zero-Trust](https://img.shields.io/badge/Security-Zero--Trust%20CAT--PLM-111111?style=for-the-badge&logo=letsencrypt&logoColor=white&labelColor=000000)](SECURITY.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-111111?style=for-the-badge&labelColor=000000)](LICENSE)
 
 *Author:* **GOKULRAMAN B** (`gokulrmn2178@mail.com`) · *Affiliation:* Department of Artificial Intelligence and Data Science, Rajalakshmi Institute of Technology, Chennai, India
 
@@ -22,6 +22,10 @@
 ---
 
 ### Headline Verified Results at a Glance
+
+<p align="center">
+  <img src="assets/nosih_bw_scorecard_strip.png" alt="NOSIH Monochrome Verified Empirical Scorecard" width="100%"/>
+</p>
 
 | Evaluation Dimension | Primary Metric | Measured NOSIH Result | Comparison / Statistical Rigor |
 | :--- | :--- | :---: | :--- |
@@ -42,7 +46,7 @@
 2. [Literature Positioning & 11-Capability Gap Matrix](#2-literature-positioning--11-capability-gap-matrix)
 3. [How We Conducted This Research (End-to-End Methodology)](#3-how-we-conducted-this-research-end-to-end-methodology)
 4. [Architectural Deep-Dive: Tri-Plane Kernel, 7-Stage Lifecycle & Cross-Plane Novelties](#4-architectural-deep-dive-tri-plane-kernel-7-stage-lifecycle--cross-plane-novelties)
-5. [Interactive Visual Gallery of Animated Simulations](#5-interactive-visual-gallery-of-animated-simulations)
+5. [Interactive Monochrome Visual Gallery (14 Animated Simulations)](#5-interactive-monochrome-visual-gallery-14-animated-simulations)
 6. [Comprehensive Empirical Evaluation & Statistical Results](#6-comprehensive-empirical-evaluation--statistical-results)
 7. [Threats to Validity, Scope of Security Claims & GPU Hardware Roadmap](#7-threats-to-validity-scope-of-security-claims--gpu-hardware-roadmap)
 8. [Repository Architecture, Quickstart, One-Command Reproduction & Artifact Index](#8-repository-architecture-quickstart-one-command-reproduction--artifact-index)
@@ -78,6 +82,10 @@ Bolting independent point solutions together—such as placing a security proxy 
   1. **PCSP (Provenance-Coupled Carbon-Security Pricing):** Cuts C-DoW adversarial emissions by **96.9%** (`50/50` mitigated).
   2. **PA-PCS-PMC (Pre-Authorized, Carbon-Modulated Sleep Control):** Cuts Sleep-Thrashing DoS wakeup waste by **100.0%** (`0.0 J` vs. `7000.0 J`, `n=40`).
   3. **CCEC (Cryptographic Carbon-Attested Execution Certificates):** Commits Scope-2 footprints into `MTLog` with $O(\log N)$ Merkle auditability (`240/240` verified in `7.93` mean / `8` max hashes (`7–8` range), `20/20` tamper detection, `20/20` simulated-as-hardware spoof rejection).
+
+| Live Neuro-Symbolic Routing & Savings | Live Zero-Trust 5-Gate Tool-Boundary Pipeline |
+| :---: | :---: |
+| <img src="assets/nosih_tier_routing_flow.gif" alt="Neuro-Symbolic 5-Tier Routing & Verified Savings" width="100%"/> | <img src="assets/nosih_zero_trust_pipeline.gif" alt="Plane I 5-Gate Zero-Trust Pipeline" width="100%"/> |
 
 ---
 
@@ -169,12 +177,20 @@ At runtime, [`src/nosih/plane3_execution/hardware_probe.py`](src/nosih/plane3_ex
 * **Physically Measured on Host CPU:** All Plane I cryptography, RFC 8785 JCS parsing, SQLite WAL concurrency races (`16`-thread `jti`, `8`-thread split-payout), Merkle proof generation/verification, and Plane III CPU symbolic engines (`SafeDecimalAST`, L2 TF-IDF RAG, 1024-pt FFT/Sobel).
 * **Explicitly Tagged Neural Profiles:** Because physical NVML/RAPL wattmeters and local GPU weights are absent in our air-gapped CPU container, neural tier power and energy ($T_1$ 3B `52 W` / `$0.10/M`, $T_2$ 8B `115 W` / `$0.25/M`, $T_3$ 32B `175 W` / `$0.85/M`, $\phi_{\text{phase}} = 0.85$, $\text{PUE} = 1.0$, `$0.12/kWh`) are explicitly tagged `HYBRID_CPU_TDP` and `CALIBRATED_TRACE_SIM` in every benchmark record and CCEC certificate.
 
+<p align="center">
+  <img src="assets/nosih_concurrency_wal.gif" alt="Physically Measured Host-CPU Concurrency & SQLite WAL Scaling" width="90%"/>
+</p>
+
 ### Stage 6: Automated Claim-to-Evidence Parity Gate (`49/49` Claims)
 [`experiments/verify_nosih_claims.py`](experiments/verify_nosih_claims.py) parses `results/benchmarks/nosih_evaluation_results.json`, `results/tests/test_suite_summary.json`, and `paper/nosih_paper.tex` to verify **49 exact numerical claims**, live CPU micro-timing bounds (`proxy_p95 < 15 ms`, `merkle_inc < 50 µs`, `merkle_cons < 50 µs`), and **zero forbidden terms** across the paper, README, and `src/nosih/`. Results are emitted to [`results/verification/claim_evidence_matrix.json`](results/verification/claim_evidence_matrix.json) (`49/49` verified, `0` timing failures, `0` violations).
 
 ---
 
 ## 4. Architectural Deep-Dive: Tri-Plane Kernel, 7-Stage Lifecycle & Cross-Plane Novelties
+
+<p align="center">
+  <img src="assets/nosih_bw_triplane_matrix.png" alt="NOSIH Monochrome Tri-Plane & Cross-Plane Architectural Blueprint" width="100%"/>
+</p>
 
 <p align="center">
   <img src="assets/architecture_triplane.png" alt="NOSIH Tri-Plane Closed-Loop Architecture Diagram" width="100%"/>
@@ -211,6 +227,10 @@ $$\sigma_{k+1} = \text{HMAC-SHA256}\!\left(\sigma_k,\; \texttt{CAV} \parallel \t
 * **Provenance Semiring & Linear Budgets (`postw_v3.py`):** Every value carries $\tau(v) = (\ell_{\mathcal{I}}, \ell_{\mathcal{C}}, W, h_{\text{deriv}})$ over $\mathcal{L} = \mathcal{I} \times \mathcal{C}$. Integrity is totally ordered $\text{HUMAN}(0) \sqsubset \text{GOV}(1) \sqsubset \text{ERP}(2) \sqsubset \text{POLICY}(3) \sqsubset \text{USER}(4) \sqsubset \text{DET}(5) \sqsubset \text{UNTRUSTED}(6)$ ($\sqcup_{\mathcal{I}} = \max$). Confidentiality combines sensitivity tier with reader-set intersection: $(t_1, R_1) \sqcup_{\mathcal{C}} (t_2, R_2) = (\max(t_1, t_2), R_1 \cap R_2)$. Financial witnesses track exact-`Decimal` linear budgets decremented atomically inside SQLite WAL `BEGIN IMMEDIATE` transactions with automatic rollback on downstream failure. Egress webhooks enforce $\ell_{\mathcal{C}} \sqsubseteq_{\mathcal{C}} \text{clear}(e)$ alongside plaintext, Base64, hex, chunked, and high-entropy exfiltration scanners.
 * **Merkle Transparency & Shadow Quarantine (`merkle_log.py`, `shadow_v3.py`, `carbon_cert.py`):** Audit and CCEC events append atomically to an RFC 6962/9162 binary Merkle tree with domain-separated leaf (`0x00`) and interior (`0x01`) SHA-256 hashing, producing Signed Tree Heads (STHs) and $O(\log N)$ inclusion/consistency proofs. Blocked sink calls are diverted to `CSDDShadowSink`, returning MAC-authenticated, Merkle-anchored quarantine receipts.
 
+| Offline Macaroon Attenuation & 16-Thread WAL Race | Static Kahn DAG & POST-W++ IFC Lattice |
+| :---: | :---: |
+| <img src="assets/nosih_macaroon_attenuation.gif" alt="SPCCE-Macaroon Offline Attenuation & SQLite WAL Replay Lock" width="100%"/> | <img src="assets/nosih_dag_ifc_lattice.gif" alt="Static Kahn DAG & POST-W++ Integrity x Confidentiality Semiring" width="100%"/> |
+
 ---
 
 ### Plane II: Carbon-Conformal Control Plane
@@ -230,6 +250,10 @@ with online dual updates $\mu_{t+1}^{(m)} = \Pi_{[0,\mu_{\max}]}(\mu_t^{(m)} + \
 
 $$\tau_{t+1}^{\text{route}} = \Pi_{[\tau_{\min}, \tau_{\max}]}\!\left(\tau_t^{\text{route}} + \eta(\alpha - \ell_t) + k_I \tanh\!\left(\frac{1}{5}\sum_{j=t-W}^{t}(\alpha - \ell_j)\right)\right)$$
 
+| PS-RCSC Provenance-Scoped Semantic Cache | Online Conformal PID Under Distribution Shift |
+| :---: | :---: |
+| <img src="assets/nosih_psrcsc_cache_engine.gif" alt="PS-RCSC Provenance-Scoped Semantic Cache & Cost-Aware Bypass" width="100%"/> | <img src="assets/nosih_conformal_pid_shift.gif" alt="Online Conformal PID Risk Calibration Under Distribution Shift" width="100%"/> |
+
 ---
 
 ### Plane III: Durable Neuro-Symbolic Execution & Predictive Power Control
@@ -239,6 +263,10 @@ Located in `src/nosih/plane3_execution/`:
 * **Predictive Multi-State GPU Power Control (`power_carbon.py`, `PCS-PMC`):** Manages neural tiers across `ACTIVE` (`18–45 W` idle VRAM), `WARM_STANDBY` (`8–18 W`, `100–180 ms` wake), and `DEEP_SLEEP` (`2.5 W` RAM-paged, `0.85–1.40 s` wake). Demotion $a \to b$ triggers once idle duration exceeds the hysteresis-scaled break-even threshold:
 
 $$\tau_{\text{be}}(m, a \to b) = \frac{E_{\text{trans}}(m, a \to b) + E_{\text{wake}}(m, b \to \texttt{ACT})}{P_{\text{idle}}(m, a) - P_{\text{idle}}(m, b)}, \qquad H_m = \eta_{\text{down}}\big(1 + \kappa\min(\text{CV}_m, 2.0)\big)$$
+
+<p align="center">
+  <img src="assets/nosih_carbon_power_sim.gif" alt="Diurnal Grid Carbon Forecast & PA-PCS-PMC 3-State GPU Power Control" width="92%"/>
+</p>
 
 ---
 
@@ -271,23 +299,31 @@ Every call to `ZeroTrustKernel.execute_request()` records an auditable `stage_tr
 2. **Pre-Authorized, Carbon-Modulated Sleep Control (`PA-PCS-PMC`, `plane3_execution/power_carbon.py`):** Executes Plane I's $<4\text{ ms}$ Macaroon/IFC check *before* waking any sleeping GPU tier (`0.0 J` wasted on unauthorized hops) and scales idle demotion thresholds inversely with grid carbon: $M_C(t) = \operatorname{clip}(C_{\text{ref}} / C(t), 0.65, 1.35)$ so GPUs sleep more aggressively during fossil peaks.
 3. **Cryptographic Carbon-Attested Execution Certificates (`CCEC`, `plane1_security/carbon_cert.py`):** Commits `(tier, energy_kwh, grid_carbon, co2_g, accounting_mode, hw_digest)` as RFC 8785 JCS leaves in Plane I's `MTLog`, enabling $O(\log N)$ Scope-2 ESG auditability and cryptographically rejecting simulated traces masquerading as hardware wattmeter telemetry.
 
+| 1. PCSP vs. C-DoW (`-96.9% CO₂`) | 2. PA-PCS-PMC vs. Sleep-DoS (`-100%`) | 3. CCEC Merkle Audit (`240/240`) |
+| :---: | :---: | :---: |
+| <img src="assets/nosih_cdow_defense.gif" alt="PCSP C-DoW Defense" width="100%"/> | <img src="assets/nosih_sleep_thrashing_dos.gif" alt="PA-PCS-PMC Sleep-Thrashing Defense" width="100%"/> | <img src="assets/nosih_merkle_ccec_audit.gif" alt="CCEC Merkle Scope-2 Audit" width="100%"/> |
+
 ---
 
-## 5. Interactive Visual Gallery of Animated Simulations
+## 5. Interactive Monochrome Visual Gallery (14 Animated Simulations)
 
-All nine dark-mode animated simulations below are generated directly from NOSIH's verified runtime modules and benchmark telemetry (in addition to the animated hero banner above):
+All **14 high-motion monochrome black-and-white animated simulations** below are rendered directly from NOSIH's verified runtime modules and benchmark telemetry (13 technical simulations below plus the animated monochrome hero banner above):
 
-| # | Simulation & Technical Focus | Live Animation |
+| # | Simulation & Technical Focus | Live Monochrome Animation |
 | :-: | :--- | :---: |
-| **1** | **Closed-Loop Tri-Plane Orchestration** — Live walkthrough of ingress profiling, `PS-RCSC` provenance cache, `CA-DPD-LinUCB` tier dispatch, `CAT-PLM` Macaroon/IFC enforcement, and `MTLog` commitment. | <img src="assets/nosih_closed_loop_demo.gif" alt="Closed-Loop Tri-Plane Demo" width="520"/> |
-| **2** | **Diurnal Grid Carbon & `PCS-PMC` Sleep Control** — Continuous 12-hour solar-trough / evening-peak carbon curve ($180\text{--}520\text{ gCO}_2\text{eq/kWh}$) driving EWMA-hysteresis `ACTIVE` / `WARM_STANDBY` / `DEEP_SLEEP` transitions (**$-79.35\%$ idle power**, `68` vs. `94` wakeups). | <img src="assets/nosih_carbon_power_sim.gif" alt="Diurnal Carbon and PCS-PMC Sleep Simulation" width="520"/> |
+| **1** | **Closed-Loop 7-Stage Tri-Plane Orchestration** — Kinetic comet walkthrough of ingress profiling, `PS-RCSC` cache, `CA-DPD-LinUCB` dispatch, `CAT-PLM` Macaroon/IFC enforcement, and `MTLog` commitment. | <img src="assets/nosih_closed_loop_demo.gif" alt="Closed-Loop Tri-Plane Demo" width="520"/> |
+| **2** | **Diurnal Grid Carbon & `PA-PCS-PMC` Sleep Control** — Continuous 24-hour solar-trough / evening-peak carbon curve ($180\text{--}520\text{ gCO}_2\text{eq/kWh}$) driving EWMA-hysteresis `ACTIVE` / `WARM_STANDBY` / `DEEP_SLEEP` transitions (**$-79.35\%$ idle power**, `68` vs. `94` wakeups). | <img src="assets/nosih_carbon_power_sim.gif" alt="Diurnal Carbon and PCS-PMC Sleep Simulation" width="520"/> |
 | **3** | **Carbon-Denial-of-Wallet (`C-DoW`) Defense via `PCSP`** — Security-blind peak-hour routing (`2.1982 g` $\text{CO}_2$, `4.5123 Wh`) vs. `PCSP` provenance-coupled pricing (`0.0689 g` $\text{CO}_2$, `0.1415 Wh` — **$-96.9\%$**, `50/50` mitigated). | <img src="assets/nosih_cdow_defense.gif" alt="C-DoW Defense via PCSP" width="520"/> |
 | **4** | **Sleep-Thrashing DoS Defense via `PA-PCS-PMC`** — Reactive GPU wakeups before auth checks (`7000.0 J` wasted across `40` attacks) vs. Pre-Authorized `PA-PCS-PMC` (`0.0 J` wasted — **$-100.0\%$**). | <img src="assets/nosih_sleep_thrashing_dos.gif" alt="Sleep-Thrashing DoS Defense via PA-PCS-PMC" width="520"/> |
 | **5** | **Online Conformal PID under Distribution Shift** — 5-seed post-shift trajectory ($t \ge 500$) showing static calibration diverging to `28.88% ± 1.41%` error while NOSIH tracks target $\alpha = 0.05$ at **`5.30% ± 0.12%`** ($p = 9.90 \times 10^{-40}$). | <img src="assets/nosih_conformal_pid_shift.gif" alt="Conformal PID under Distribution Shift" width="520"/> |
 | **6** | **Cryptographic Scope-2 Carbon Audit (`CCEC` + `MTLog`)** — RFC 8785 JCS certificate commitment into RFC 6962/9162 Merkle trees (`240/240` verified in `7.93` mean / `8` max hashes (`7–8` range), `488.15 µs` avg verify, `20/20` tamper & `20/20` spoof caught). | <img src="assets/nosih_merkle_ccec_audit.gif" alt="CCEC Merkle Carbon Audit" width="520"/> |
-| **7** | **Plane I 5-Gate Zero-Trust Pipeline (`NEW`)** — Live packet traversal across RFC 8785 JCS, Signed Manifests, Macaroon/JTI WAL replay, `POSTW+` semiring IFC, and `MTLog` (`70/70` attacks blocked across 10 families, `30/30` benign passed, `2.69 ms` mean). | <img src="assets/nosih_zero_trust_pipeline.gif" alt="Plane I 5-Gate Zero-Trust Tool-Boundary Pipeline" width="520"/> |
-| **8** | **Neuro-Symbolic 5-Tier Routing & Savings (`NEW`)** — Live 240-prompt distribution (`50.0%` CPU offload on `T0a`/`T0b` in `≤ 3.5 ms`) paired with verified savings (`-75.2%` Energy, `-68.7%` CO₂, `-67.8%` Latency, `-63.1%` Cost, `-79.35%` Idle GPU). | <img src="assets/nosih_tier_routing_flow.gif" alt="Neuro-Symbolic Tier Routing and Savings Dashboard" width="520"/> |
-| **9** | **Host-CPU Concurrency & SQLite WAL Scaling (`NEW`)** — Physically measured async bursts (`C = 1..100`) through `ZeroTrustKernel` + SQLite WAL reaching `706.1 req/s` peak (`161/161` OK, `0` errors) with P50/P95/P99 latency curves. | <img src="assets/nosih_concurrency_wal.gif" alt="Host-CPU Concurrency and SQLite WAL Scaling" width="520"/> |
+| **7** | **Plane I 5-Gate Zero-Trust Pipeline** — Live multi-scenario packet traversal across RFC 8785 JCS, Signed Manifests, Macaroon/JTI WAL replay, `POST-W++` semiring IFC, and `MTLog` (`70/70` attacks blocked across 10 families, `30/30` benign passed, `2.71 ms` mean). | <img src="assets/nosih_zero_trust_pipeline.gif" alt="Plane I 5-Gate Zero-Trust Tool-Boundary Pipeline" width="520"/> |
+| **8** | **Neuro-Symbolic 5-Tier Routing & Verified Savings** — Live 240-prompt distribution (`50.0%` CPU offload on `T0a`/`T0b` in `≤ 3.5 ms`) paired with verified savings (`-75.2%` Energy, `-68.7%` CO₂, `-67.8%` Latency, `-63.1%` Cost, `-79.35%` Idle GPU). | <img src="assets/nosih_tier_routing_flow.gif" alt="Neuro-Symbolic Tier Routing and Savings Dashboard" width="520"/> |
+| **9** | **Host-CPU Concurrency & SQLite WAL Scaling** — Physically measured async bursts (`C = 1..100`) through `ZeroTrustKernel` + SQLite WAL reaching `727.1 req/s` peak (`161/161` OK, `0` errors) with P50/P95/P99 latency curves. | <img src="assets/nosih_concurrency_wal.gif" alt="Host-CPU Concurrency and SQLite WAL Scaling" width="520"/> |
+| **10** | **`PS-RCSC` Provenance-Scoped Semantic Cache (`NEW`)** — Live provenance partition routing ($\kappa$), deterministic CPU cost-aware bypass (`0.018 ms`), animated cosine similarity radar sweep, and cross-tenant poisoning isolation (`64/240` hits, `0/7` leaks). | <img src="assets/nosih_psrcsc_cache_engine.gif" alt="PS-RCSC Provenance-Scoped Semantic Cache Animation" width="520"/> |
+| **11** | **`SPCCE-Macaroon` Attenuation & 16-Thread WAL Race (`NEW`)** — Offline HMAC-SHA256 caveat chain ($\sigma_0 \to \sigma_3$) coupled with a 16-thread concurrent `jti` replay race serialized by SQLite WAL `BEGIN IMMEDIATE` (`1/16` admitted, `15/16` blocked). | <img src="assets/nosih_macaroon_attenuation.gif" alt="SPCCE-Macaroon Offline Attenuation & SQLite WAL Race" width="520"/> |
+| **12** | **Static Kahn DAG & `POST-W++` IFC Lattice (`NEW`)** — Live topological wave comparing a clean `ERP → SafeDecimalAST → Sink` execution against a multi-hop `UNTRUSTED` IPI taint wave diverted into `CSDDShadowSink` quarantine. | <img src="assets/nosih_dag_ifc_lattice.gif" alt="Static Kahn DAG & POST-W++ IFC Semiring Animation" width="520"/> |
+| **13** | **7-Condition Ablation & Linear Scalability Sweep (`NEW`)** — Kinetic component ablation across all 7 configurations (`n = 120`) synchronized with the `20–240` query linear energy scalability curve (Pearson $r = 0.9998$). | <img src="assets/nosih_ablation_radar_sweep.gif" alt="7-Condition Ablation and Linear Scalability Animation" width="520"/> |
 
 ---
 
@@ -328,6 +364,10 @@ All metrics below are reproduced verbatim from [`results/benchmarks/nosih_evalua
 ---
 
 ### 6.3 5-Tier Routing Distribution (`n = 240`), 7-Condition Ablation (`n = 120`) & Scalability
+
+<p align="center">
+  <img src="assets/nosih_ablation_radar_sweep.gif" alt="Animated 7-Condition Ablation & Linear Energy Scalability Sweep" width="92%"/>
+</p>
 
 <p align="center">
   <img src="assets/ablation_and_scalability.png" alt="NOSIH 7-Condition Ablation and Linear Scalability" width="100%"/>
@@ -422,12 +462,14 @@ Scientific rigor requires stating exactly what is physically measured, what is m
 ### Repository Layout
 
 ```text
-NOSIH_REPO/
-├── assets/                          # 7 high-res research PNGs + 6 animated simulation GIFs
+NOSIH/
+├── assets/                          # 9 high-res research PNGs + 14 monochrome animated simulation GIFs
 ├── docs/
+│   ├── FORMAL_PROOFS.md
 │   └── NOSIH_Architecture_and_Logic_Guide.docx
 ├── experiments/
 │   ├── run_nosih_evaluation.py      # 240-prompt 3-seed benchmark, ablation, security & cross-plane suite
+│   ├── run_hardware_validation.py   # Physical NVML / RAPL / Ollama hardware validation runner
 │   └── verify_nosih_claims.py       # Automated 49-claim parity & cleanliness verifier
 ├── paper/
 │   ├── nosih_paper.tex              # 7-page IEEE two-column LaTeX source
@@ -578,7 +620,6 @@ Distinct from workload-size energy linearity (`r = 0.9998`), we physically execu
 - **Carbon Forecast (`SYNTHETIC_DIURNAL_OU_BENCHMARK`, 168 h — distinct from live grid APIs):** Deterministic diurnal prior achieves **11.37 gCO₂/kWh MAE** (`14.76` RMSE, `3.63%` MAPE); 5-minute live blending reduces MAE to **4.10 gCO₂/kWh** (`5.33` RMSE); 60-minute stale fallback holds `14.34` RMSE.
 - **Conformal PID Finite-Sample Honesty:** Measured risk at `T_post = 800` is `5.30% ± 0.12%` (above `5.00%` by `+0.30 pp` due to finite-sample integral lag bounded by $O(1/(\eta T))$ in Theorem 4). Extending to `T_post = 3000` converges to **5.07% ± 0.02%**, and a conservative design target `alpha_design = 0.045` holds finite-window risk strictly under 5% at **4.72% ± 0.09%**.
 - **Complete Formal Proofs & Physical GPU Runner:** Full assumptions (`A1–A3`, `B1–B3`, `C1–C2`) and step-by-step derivations for Theorems 1–5 are in [`docs/FORMAL_PROOFS.md`](docs/FORMAL_PROOFS.md), and the physical NVML/RAPL/Ollama deployment script is in [`experiments/run_hardware_validation.py`](experiments/run_hardware_validation.py).
-
 
 ### 4. Precision Clarifications (CCEC Trust Scope, Theorem 4, Cache Timing & Pricing)
 - **CCEC Trust Scope (Auditable Accounting vs. Hardware TEE Attestation):** CCEC provides tamper-evident, Merkle-auditable Scope-2 accounting records under the host TCB (verified across all `240/240` leaves at `N=240` in `7.93` mean / `8` max hashes, range `7–8`). Hardware-attested sensor authenticity against a compromised host requires TEE/confidential-GPU attestation (e.g., Intel TDX / NVIDIA Confidential Computing) beyond host software.
